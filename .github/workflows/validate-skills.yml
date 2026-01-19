@@ -23,6 +23,14 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Cache pip packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-skills-ref
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
       - name: Install skills-ref
         run: pip install git+https://github.com/agentskills/agentskills.git#subdirectory=skills-ref
 
