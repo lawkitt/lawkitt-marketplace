@@ -1,6 +1,6 @@
 #!/usr/bin/env npx tsx
 /**
- * Generate marketplace.json from meta.json and skill SKILL.md frontmatter.
+ * Generate marketplace.yaml from skill SKILL.md frontmatter.
  *
  * Usage: npx tsx bin/generate-marketplace.ts
  */
@@ -9,16 +9,23 @@ import * as fs from "fs";
 import * as path from "path";
 import { fileURLToPath } from "url";
 import matter from "gray-matter";
+import { Document, Scalar } from "yaml";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const skillsDir = path.join(__dirname, "..", "skills");
-const claudePluginDir = path.join(skillsDir, ".claude-plugin");
 
-const marketplace = JSON.parse(
-  fs.readFileSync(path.join(claudePluginDir, "meta.json"), "utf-8")
-);
+const GITHUB_BASE_URL = "https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills";
+const RAW_BASE_URL = "https://raw.githubusercontent.com/Kilo-Org/kilo-marketplace/main/skills";
 
-marketplace.plugins = fs
+// Create a folded block scalar with strip chomping (>-)
+function foldedScalar(value: string): Scalar {
+  const scalar = new Scalar(value);
+  scalar.type = Scalar.BLOCK_FOLDED;
+  scalar.blockChomping = "strip";
+  return scalar;
+}
+
+const items = fs
   .readdirSync(skillsDir, { withFileTypes: true })
   .filter((d) => d.isDirectory() && !d.name.startsWith("."))
   .map((dir) => {
@@ -27,20 +34,21 @@ marketplace.plugins = fs
     );
     console.log(`Added: ${data.name}`);
     return {
-      name: data.name,
-      description: data.description,
-      source: `./${dir.name}`,
-      ...(data.metadata?.category && { category: data.metadata.category }),
+      id: dir.name,
+      description: foldedScalar(data.description),
+      category: data.metadata?.category || undefined,
+      githubUrl: `${GITHUB_BASE_URL}/${dir.name}`,
+      rawUrl: `${RAW_BASE_URL}/${dir.name}/SKILL.md`,
     };
   })
   .sort((a, b) => {
     const catCmp = (a.category || "zzz").localeCompare(b.category || "zzz");
-    return catCmp !== 0 ? catCmp : a.name.localeCompare(b.name);
+    return catCmp !== 0 ? catCmp : a.id.localeCompare(b.id);
   });
 
-fs.writeFileSync(
-  path.join(claudePluginDir, "marketplace.json"),
-  JSON.stringify(marketplace, null, 2) + "\n"
-);
+const doc = new Document({ items });
+const output = doc.toString({ lineWidth: 120 });
 
-console.log(`\nGenerated marketplace.json with ${marketplace.plugins.length} plugins`);
+fs.writeFileSync(path.join(skillsDir, "marketplace.yaml"), output);
+
+console.log(`\nGenerated marketplace.yaml with ${items.length} skills`);
