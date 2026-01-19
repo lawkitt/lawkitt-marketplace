@@ -1,6 +1,6 @@
 #!/usr/bin/env npx tsx
 /**
- * Generate skills.yaml from skill SKILL.md frontmatter.
+ * Generate marketplace.yaml from skill SKILL.md frontmatter.
  *
  * Usage: npx tsx bin/generate-marketplace.ts
  */
@@ -49,6 +49,6 @@ const items = fs
 const doc = new Document({ items });
 const output = doc.toString({ lineWidth: 120 });
 
-fs.writeFileSync(path.join(skillsDir, "skills.yaml"), output);
+fs.writeFileSync(path.join(skillsDir, "marketplace.yaml"), output);
 
-console.log(`\nGenerated skills.yaml with ${items.length} skills`);
+console.log(`\nGenerated marketplace.yaml with ${items.length} skills`);
