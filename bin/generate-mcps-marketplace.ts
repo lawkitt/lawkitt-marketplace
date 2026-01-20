@@ -1,6 +1,6 @@
 #!/usr/bin/env npx tsx
 /**
- * Generate marketplace.yaml from individual MCP YAML files.
+ * Generate marketplace.yaml from individual MCP directories.
  *
  * Usage: npx tsx bin/generate-mcps-marketplace.ts
  */
@@ -15,10 +15,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const mcpsDir = path.join(__dirname, "..", "mcps");
 
 const items = fs
-  .readdirSync(mcpsDir)
-  .filter((file) => file.endsWith(".yaml") && file !== "marketplace.yaml")
-  .map((file) => {
-    const content = fs.readFileSync(path.join(mcpsDir, file), "utf-8");
+  .readdirSync(mcpsDir, { withFileTypes: true })
+  .filter((d) => d.isDirectory() && !d.name.startsWith("."))
+  .map((dir) => {
+    const content = fs.readFileSync(path.join(mcpsDir, dir.name, "MCP.yaml"), "utf-8");
     const mcp = yaml.parse(content);
     console.log(`Added: ${mcp.name}`);
     return mcp;
