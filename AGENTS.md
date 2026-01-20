@@ -60,3 +60,8 @@ metadata:
 After the frontmatter, include the skill's documentation in Markdown format.
 
 If you need more information, checkout https://agentskills.io/llms.txt
+
+## Adding a remote skill
+
+when asked to add a skill from a github url
+use the instructions in .kilocode/skills/add-remote-skill/SKILL.md
