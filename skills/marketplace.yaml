@@ -141,7 +141,7 @@ items:
     content: https://github.com/Kilo-Org/kilo-marketplace/releases/download/skills-latest/skill-creator.tar.gz
   - id: skill-share
     description: >-
-      A skill that creates new Kilo Code skills and automatically shares them on Slack using Rube for seamless team
+      A skill that creates new agent skills and automatically shares them on Slack using Rube for seamless team
       collaboration and skill discovery.
     category: development
     githubUrl: https://github.com/Kilo-Org/kilo-marketplace/tree/main/skills/skill-share
