@@ -2,7 +2,7 @@
 /**
  * Generate marketplace.yaml from skill SKILL.md frontmatter.
  *
- * Usage: npx tsx bin/generate-marketplace.ts
+ * Usage: npx tsx bin/generate-skill-marketplace.ts
  */
 
 import * as fs from "fs";

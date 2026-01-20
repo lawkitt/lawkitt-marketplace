@@ -37,7 +37,7 @@ jobs:
         working-directory: bin
 
       - name: Generate marketplace.yaml
-        run: pnpm exec tsx generate-marketplace.ts
+        run: pnpm exec tsx generate-skill-marketplace.ts
         working-directory: bin
 
       - name: Check for changes
