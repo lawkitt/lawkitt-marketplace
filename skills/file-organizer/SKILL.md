@@ -36,7 +36,7 @@ This skill acts as your personal organization assistant, helping you maintain a 
 cd ~
 ```
 
-Then run Claude Code and ask for help:
+Then run Kilo Code and ask for help:
 
 ```
 Help me organize my Downloads folder
