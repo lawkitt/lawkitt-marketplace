@@ -5,9 +5,9 @@ metadata:
   author: vercel
   version: "1.0.0"
   argument-hint: <file-or-pattern>
-source:
-  repository: https://github.com/vercel-labs/agent-skills
-  path: skills/claude.ai/web-design-guidelines
+  source:
+    repository: https://github.com/vercel-labs/agent-skills
+    path: skills/claude.ai/web-design-guidelines
 ---
 
 # Web Interface Guidelines
