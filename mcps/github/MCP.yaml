@@ -1,0 +1,40 @@
+id: github
+name: GitHub
+description: GitHub's official MCP Server that provides seamless integration with GitHub APIs, enabling advanced
+  automation and interaction capabilities for developers and tools.
+author: github
+url: https://github.com/github/github-mcp-server
+tags:
+  - github
+  - git
+  - repository-management
+  - issue-tracking
+  - pull-requests
+  - code-scanning
+  - collaboration
+  - api-integration
+prerequisites:
+  - GitHub account
+  - Docker
+content: >
+  {
+    "command": "docker",
+    "args": ["run", "-i", "--rm", "-e", "GITHUB_PERSONAL_ACCESS_TOKEN", "-e", "GITHUB_TOOLSETS", "-e", "GITHUB_READ_ONLY", "ghcr.io/github/github-mcp-server"],
+    "env": {
+      "GITHUB_PERSONAL_ACCESS_TOKEN": "{{GITHUB_PERSONAL_ACCESS_TOKEN}}",
+      "GITHUB_TOOLSETS": "{{GITHUB_TOOLSETS}}",
+      "GITHUB_READ_ONLY": "{{GITHUB_READ_ONLY}}"
+    }
+  }
+parameters:
+  - name: GitHub Personal Access Token
+    key: GITHUB_PERSONAL_ACCESS_TOKEN
+    placeholder: ghp_your_github_personal_access_token
+  - name: GitHub Toolsets
+    key: GITHUB_TOOLSETS
+    placeholder: repos,issues,pull_requests,code_security
+    optional: true
+  - name: GitHub Read Only (1 for true, 0 for false)
+    key: GITHUB_READ_ONLY
+    placeholder: "0"
+    optional: true
