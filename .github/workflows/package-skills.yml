@@ -63,3 +63,12 @@ jobs:
             --notes "Latest packaged skills. Updated automatically."
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify artifact URLs
+        run: |
+          echo "Artifacts uploaded to skills-latest:"
+          for tarball in dist/*.tar.gz; do
+            filename=$(basename "$tarball")
+            url="https://github.com/lawkitt/lawkitt-marketplace/releases/download/skills-latest/$filename"
+            echo "- $url"
+          done

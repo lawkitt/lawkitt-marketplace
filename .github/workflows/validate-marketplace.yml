@@ -30,6 +30,20 @@ jobs:
         run: pnpm install
         working-directory: bin
 
+      - name: Check for Catalog Drift
+        run: |
+          pnpm exec tsx generate-skill-marketplace.ts
+          pnpm exec tsx generate-modes-marketplace.ts
+          pnpm exec tsx generate-mcps-marketplace.ts
+          
+          if ! git diff --quiet ../skills/marketplace.yaml ../modes/marketplace.yaml ../mcps/marketplace.yaml; then
+            echo "Error: Marketplace catalogs are out of sync with source files."
+            echo "Please run the generation scripts locally and commit the changes."
+            git diff ../skills/marketplace.yaml ../modes/marketplace.yaml ../mcps/marketplace.yaml
+            exit 1
+          fi
+        working-directory: bin
+
       - name: Validate Catalog Contracts
         run: pnpm exec tsx validate-marketplace-contract.ts
         working-directory: bin
