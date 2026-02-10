@@ -64,4 +64,4 @@ If you need more information, checkout https://agentskills.io/llms.txt
 ## Adding a remote skill
 
 when asked to add a skill from a github url
-use the instructions in .kilocode/skills/add-remote-skill/SKILL.md
+use the instructions in .agents/skills/add-remote-skill/SKILL.md
