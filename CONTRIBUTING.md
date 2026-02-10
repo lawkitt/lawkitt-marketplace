@@ -1,6 +1,6 @@
-# Contributing to Kilo Marketplace
+# Contributing to Lawkitt Marketplace
 
-Thank you for your interest in contributing to the Kilo Marketplace! This guide will help you add new skills that benefit the entire community.
+Thank you for your interest in contributing to the Lawkitt Marketplace! This guide will help you add new skills that benefit the entire community.
 
 ## Before You Start
 
@@ -16,7 +16,7 @@ All skills must:
 2. **Be well-documented** - Include clear instructions, examples, and use cases.
 3. **Be accessible** - Written for non-technical users when possible.
 4. **Include examples** - Show practical, real-world usage.
-5. **Be tested** - Verify the skill works in Kilo Code
+5. **Be tested** - Verify the skill works in Lawkitt
 6. **Be safe** - Confirm before destructive operations.
 
 ## Skill Structure

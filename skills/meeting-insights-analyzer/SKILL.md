@@ -49,7 +49,7 @@ This skill transforms your meeting transcripts into actionable insights about yo
 ### Basic Setup
 
 1. Download your meeting transcripts to a folder (e.g., `~/meetings/`)
-2. Navigate to that folder in Kilo Code
+2. Navigate to that folder in Lawkitt
 3. Ask for the analysis you want
 
 ### Quick Start Examples

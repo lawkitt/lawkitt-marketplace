@@ -48,7 +48,7 @@ Create your draft file:
 touch article-draft.md
 ```
 
-Open Kilo Code from this directory and start writing.
+Open Lawkitt from this directory and start writing.
 
 ### Basic Workflow
 

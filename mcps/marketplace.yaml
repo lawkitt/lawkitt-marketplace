@@ -252,45 +252,6 @@ items:
         key: AXIOM_ORG_ID
         placeholder: your-org-id
         optional: true
-  - id: azure-devops
-    name: Azure DevOps
-    description: Official Microsoft MCP server for Azure DevOps integration, bringing comprehensive Azure DevOps
-      functionality directly to your AI agents. Supports work items, repositories, builds, releases, test plans, and
-      search across your Azure DevOps organization with 50+ tools for complete DevOps automation.
-    author: microsoft
-    url: https://github.com/microsoft/azure-devops-mcp
-    tags:
-      - azure-devops
-      - microsoft
-      - devops
-      - work-items
-      - repositories
-      - builds
-      - releases
-      - test-plans
-      - project-management
-      - ci-cd
-      - version-control
-      - pull-requests
-      - search
-      - official
-    prerequisites:
-      - Azure DevOps organization
-      - Azure CLI authentication
-    content:
-      - name: NPX
-        prerequisites:
-          - Node.js
-          - Azure CLI (logged in with az login)
-        content: >
-          {
-            "command": "npx",
-            "args": ["-y", "@azure-devops/mcp@1.0.0", "--hash", "sha1:742d3aa74ec8a13283a62c77c9fc5c2a0d276624", "{{AZURE_DEVOPS_ORG}}"]
-          }
-        parameters:
-          - name: Azure DevOps Organization
-            key: AZURE_DEVOPS_ORG
-            placeholder: contoso
   - id: brave-search
     name: Brave Search
     description: Integrates Brave Search API to provide comprehensive web and local search capabilities with smart
@@ -450,151 +411,6 @@ items:
             key: DOCUMENT_SUPPORT
             placeholder: "true"
             optional: true
-  - id: cloudflare
-    name: Cloudflare
-    description: Manages Cloudflare resources including Workers, KV stores, R2 storage, D1 databases, and analytics through
-      natural language interactions.
-    author: cloudflare
-    url: https://github.com/cloudflare/mcp-server-cloudflare
-    tags:
-      - cloudflare
-      - serverless
-      - edge-computing
-      - cloud-storage
-      - database-management
-    content:
-      - name: Remote MCP - Observability
-        prerequisites:
-          - Node.js
-        content: |
-          {
-            "command": "npx",
-            "args": ["mcp-remote", "https://observability.mcp.cloudflare.com/sse"]
-          }
-      - name: Remote MCP - Workers Bindings
-        prerequisites:
-          - Node.js
-        content: |
-          {
-            "command": "npx",
-            "args": ["mcp-remote", "https://bindings.mcp.cloudflare.com/sse"]
-          }
-      - name: Remote MCP - Documentation
-        prerequisites:
-          - Node.js
-        content: |
-          {
-            "command": "npx",
-            "args": ["mcp-remote", "https://docs.mcp.cloudflare.com/sse"]
-          }
-      - name: Remote MCP - Workers Builds
-        prerequisites:
-          - Node.js
-        content: |
-          {
-            "command": "npx",
-            "args": ["mcp-remote", "https://builds.mcp.cloudflare.com/sse"]
-          }
-      - name: Remote MCP - Radar
-        prerequisites:
-          - Node.js
-        content: |
-          {
-            "command": "npx",
-            "args": ["mcp-remote", "https://radar.mcp.cloudflare.com/sse"]
-          }
-      - name: Remote MCP - Browser Rendering
-        prerequisites:
-          - Node.js
-        content: |
-          {
-            "command": "npx",
-            "args": ["mcp-remote", "https://browser.mcp.cloudflare.com/sse"]
-          }
-    parameters:
-      - name: Cloudflare API Token
-        key: CLOUDFLARE_API_TOKEN
-        placeholder: your_cloudflare_api_token_here
-  - id: codegen
-    name: Codegen
-    description: Enables parsing codebases and executing codemods through standardized model inference, supporting various
-      LLM providers via integration with the Codegen SDK.
-    author: codegen-sh
-    url: https://github.com/codegen-sh/codegen-sdk/tree/develop/codegen-examples/examples/codegen-mcp-server
-    tags:
-      - code-generation
-      - codemod
-      - code-parsing
-      - sdk-integration
-      - llm-tools
-    prerequisites:
-      - uv
-      - Python 3.12+
-    content:
-      - name: UVX
-        prerequisites:
-          - Python and uv
-        content: >
-          {
-            "command": "uvx",
-            "args": [
-              "--from",
-              "git+https://github.com/codegen-sh/codegen-sdk.git#egg=codegen-mcp-server&subdirectory=codegen-examples/examples/codegen-mcp-server",
-              "codegen-mcp-server"
-            ]
-          }
-      - name: Direct Execution
-        prerequisites:
-          - Python
-          - uv
-        content: >
-          {
-            "command": "uvx",
-            "args": ["--from", "git+https://github.com/codegen-sh/codegen-sdk.git#egg=codegen-mcp-server&subdirectory=codegen-examples/examples/codegen-mcp-server", "codegen-mcp-server"]
-          }
-    parameters:
-      - name: Prerequisites
-        key: PREREQUISITES
-        placeholder: Requires uv and Python 3.12+
-  - id: composer-trade
-    name: Composer
-    description: Official Composer MCP server that enables creation of automated investing strategies, backtesting, strategy
-      discovery, portfolio monitoring, and live trading through the Composer platform.
-    author: invest-composer
-    url: https://github.com/invest-composer/composer-trade-mcp
-    tags:
-      - trading
-      - investing
-      - backtesting
-      - portfolio-management
-      - financial-automation
-      - strategy-creation
-      - market-analysis
-      - composer-api
-      - algorithmic-trading
-      - risk-management
-    content: >
-      {
-        "command": "uvx",
-        "args": ["composer-trade-mcp==0.1.4", "--hash", "sha256:37d8fcfd6ddc9c8155633f755159f3fcb1a63e7acc2a32513613341a851c84e2"],
-        "env": {
-          "COMPOSER_API_KEY": "{{COMPOSER_API_KEY}}",
-          "COMPOSER_SECRET_KEY": "{{COMPOSER_SECRET_KEY}}"
-        }
-      }
-    parameters:
-      - name: Composer API Key
-        key: COMPOSER_API_KEY
-        placeholder: your_composer_api_key
-        optional: true
-      - name: Composer Secret Key
-        key: COMPOSER_SECRET_KEY
-        placeholder: your_composer_secret_key
-        optional: true
-    prerequisites:
-      - Python and uv
-      - Composer.trade account (optional for backtesting)
-      - Composer.trade subscription (required for live trading)
   - id: context7
     name: Context7
     description: Up-to-date code documentation for LLMs and AI code editors. Provides version-specific documentation and
@@ -789,27 +605,6 @@ items:
       - name: Exa API Key
         key: EXA_API_KEY
         placeholder: your_exa_api_key_here
-  - id: figma-dev-mode
-    name: Figma Dev Mode
-    description: Brings Figma directly into your workflow by providing important design information and context to AI agents
-      generating code from Figma design files. Enables code generation from selected frames, design context extraction,
-      and Code Connect integration.
-    author: figma
-    url: https://help.figma.com/hc/en-us/articles/32132100833559-Guide-to-the-Dev-Mode-MCP-Server
-    tags:
-      - figma
-      - design-to-code
-      - ui-development
-      - design-systems
-      - code-generation
-      - dev-mode
-    content:
-      - name: Figma Dev Mode
-        content: |
-          {
-            "type": "sse",
-            "url": "http://127.0.0.1:3845/sse"
-          }
   - id: filesystem
     name: File System
     description: Provides comprehensive filesystem operations including reading, writing, moving files, directory
@@ -843,49 +638,6 @@ items:
       - name: Allowed Directory
         key: ALLOWED_DIRECTORY
         placeholder: /Users/username/Documents
-  - id: firebase
-    name: Firebase
-    description: The Firebase MCP server allows AI-powered development tools to work with your Firebase projects. It can
-      create and manage Firebase projects, manage Authentication users, work with data in Cloud Firestore and Data
-      Connect, retrieve schemas, understand security rules, and send messages with Cloud Messaging.
-    author: firebase
-    url: https://firebase.google.com/docs/cli/mcp-server
-    tags:
-      - firebase
-      - gcp
-      - firestore
-      - authentication
-      - cloud-functions
-      - hosting
-      - storage
-      - data-connect
-      - cloud-messaging
-    content:
-      - name: NPX
-        prerequisites:
-          - Node.js
-        content: |
-          {
-            "command": "npx",
-            "args": ["-y", "firebase-tools@14.15.2", "experimental:mcp"]
-          }
-      - name: NPX with Options
-        prerequisites:
-          - Node.js
-        content: >
-          {
-            "command": "npx",
-            "args": ["-y", "firebase-tools@14.15.2", "experimental:mcp", "--dir", "{{FIREBASE_DIR}}", "--only", "{{FIREBASE_ONLY}}"]
-          }
-        parameters:
-          - name: Project Directory
-            key: FIREBASE_DIR
-            placeholder: /Users/turing/my-project
-            optional: true
-          - name: Feature Groups
-            key: FIREBASE_ONLY
-            placeholder: auth,firestore,storage
-            optional: true
   - id: fireproof
     name: Fireproof
     description: A JSON document store server providing CRUD operations and field-based sorting queries, powered by
@@ -1231,31 +983,6 @@ items:
       - name: Google Maps API Key
         key: GOOGLE_MAPS_API_KEY
         placeholder: your_google_maps_api_key
-  - id: google-maps-platform-code-assist
-    name: Google Maps Platform Code Assist
-    description: Official Google Maps Platform MCP for AI-powered code assistance. Provides tools to generate client-side
-      and server-side code for Maps, Routes, and Places APIs, helping developers build geospatial applications faster.
-    author: googlemaps
-    url: https://github.com/googlemaps/platform-ai
-    tags:
-      - google-maps
-      - code-generation
-      - geospatial
-      - maps
-      - routes
-      - places
-      - api-integration
-      - ai-assistant
-      - official
-    content:
-      - name: NPX
-        prerequisites:
-          - Node.js
-        content: |
-          {
-            "command": "npx",
-            "args": ["-y", "@googlemaps/code-assist-mcp@0.2.0"]
-          }
   - id: google-workspace
     name: Google Workspace
     description: Control Gmail, Google Calendar, Docs, Sheets, Slides, Chat, Forms, Tasks, Search & Drive with AI. The most
@@ -1295,27 +1022,6 @@ items:
       - name: Google OAuth Client Secret
         key: GOOGLE_OAUTH_CLIENT_SECRET
         placeholder: your-google-oauth-client-secret
-  - id: ida-pro
-    name: IDA Pro
-    description: An MCP server for interacting with the IDA Pro disassembler.
-    author: mrexodia
-    url: https://github.com/mrexodia/ida-pro-mcp
-    tags:
-      - ida-pro
-      - reverse-engineering
-      - disassembler
-      - debugging
-      - security
-    content:
-      - name: UVX
-        prerequisites:
-          - Python and uv
-          - Git
-        content: >
-          {
-            "command": "uvx",
-            "args": ["--from", "git+https://github.com/mrexodia/ida-pro-mcp.git@f0af9fba733fb60fc13365b297b10c82db3771d7", "ida-pro-mcp"]
-          }
   - id: kagi
     name: Kagi Search
     description: Integrates Kagi's advanced search API to provide AI assistants with up-to-date web search capabilities and
@@ -1375,40 +1081,6 @@ items:
         key: KAGI_SUMMARIZER_ENGINE
         placeholder: cecil
         optional: true
-  - id: laravel-boost
-    name: Laravel Boost
-    description: Official Laravel MCP server providing comprehensive AI-powered development tools including database schema inspection, query execution, route analysis, artisan command access, configuration management, documentation search, error tracking, and extensible skills system for Laravel applications.
-    author: laravel
-    url: https://github.com/laravel/boost
-    tags:
-      - laravel
-      - php
-      - database
-      - artisan
-      - routes
-      - configuration
-      - documentation
-      - error-tracking
-      - ai-integration
-      - web-development
-      - official
-    prerequisites:
-      - PHP 8.1 or higher
-      - Laravel 10.x, 11.x, or 12.x
-      - Composer
-      - Laravel Boost package installed via composer require laravel/boost --dev
-    content:
-      - name: PHP Artisan
-        prerequisites:
-          - PHP 8.1+
-          - Laravel 10.x/11.x/12.x
-          - Laravel Boost package installed
-        content: |
-          {
-            "command": "php",
-            "args": ["artisan", "boost:mcp"]
-          }
-    parameters: []
   - id: linear
     name: Linear
     description: Facilitates project management with the Linear API, enabling issue tracking, project organization, and team
@@ -1497,69 +1169,6 @@ items:
           - name: Memory File Path
             key: MEMORY_FILE_PATH
             placeholder: /path/to/custom/memory.json
-  - id: metoro
-    name: Kubernetes Observer
-    description: Enables interaction with Kubernetes clusters through Metoro's observability platform, providing eBPF-based
-      telemetry and monitoring capabilities via natural language queries.
-    author: metoro-io
-    url: https://github.com/metoro-io/metoro-mcp-server
-    tags:
-      - kubernetes
-      - observability
-      - ebpf
-      - telemetry
-      - microservices
-    content:
-      - name: Go Binary
-        content: |
-          {
-            "command": "{{METORO_BINARY_PATH}}/metoro-mcp-server",
-            "args": [],
-            "env": {
-              "METORO_AUTH_TOKEN": "{{METORO_AUTH_TOKEN}}",
-              "METORO_API_URL": "{{METORO_API_URL}}"
-            }
-          }
-      - name: Demo Cluster
-        content: >
-          {
-            "command": "{{METORO_BINARY_PATH}}/metoro-mcp-server",
-            "args": [],
-            "env": {
-              "METORO_AUTH_TOKEN": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjdXN0b21lcklkIjoiOThlZDU1M2QtYzY4ZC00MDRhLWFhZjItNDM2ODllNWJiMGUzIiwiZW1haWwiOiJ0ZXN0QGNocmlzYmF0dGFyYmVlLmNvbSIsImV4cCI6MTgyMTI0NzIzN30.7G6alDpcZh_OThYj293Jce5rjeOBqAhOlANR_Fl5auw",
-              "METORO_API_URL": "https://demo.us-east.metoro.io"
-            }
-          }
-    parameters:
-      - name: Metoro Binary Path
-        key: METORO_BINARY_PATH
-        placeholder: /path/to/metoro-mcp-server
-      - name: Metoro Auth Token
-        key: METORO_AUTH_TOKEN
-        placeholder: your_metoro_auth_token
-      - name: Metoro API URL
-        key: METORO_API_URL
-        placeholder: https://us-east.metoro.io
-  - id: microsoft-learn
-    name: Microsoft Learn
-    description: Official Microsoft Learn MCP server that provides access to Microsoft Learn content, including
-      documentation, tutorials, and learning paths.
-    author: microsoft
-    url: https://github.com/microsoftdocs/mcp
-    tags:
-      - microsoft
-      - documentation
-      - learning
-      - tutorials
-      - azure
-      - official
-    content:
-      - name: Remote MCP
-        content: |
-          {
-            "type": "streamable-http",
-            "url": "https://learn.microsoft.com/api/mcp"
-          }
   - id: motherduck
     name: MotherDuck
     description: Enables database operations with MotherDuck and local DuckDB, providing tools for connection
@@ -1816,6 +1425,36 @@ items:
         key: NEON_API_KEY
         placeholder: your_neon_api_key
         optional: true
+  - id: nia
+    name: Nia
+    description: Nia is an API and MCP layer that gives agents continuously updated context from libraries, research papers,
+      and docs, so they don't hallucinate and you skip manual ingestion.
+    author: Nozomio Labs
+    url: https://docs.trynia.ai
+    tags:
+      - documentation
+      - knowledge-base
+      - repository-indexing
+      - semantic-search
+      - research-papers
+      - code-context
+      - ai-research
+    prerequisites:
+      - Nia account (https://app.trynia.ai)
+    content:
+      - name: Remote Server
+        content: |
+          {
+            "type": "streamable-http",
+            "url": "https://apigcp.trynia.ai/mcp",
+            "headers": {
+              "Authorization": "Bearer {{NIA_API_KEY}}"
+            }
+          }
+    parameters:
+      - name: Nia API Key
+        key: NIA_API_KEY
+        placeholder: your_nia_api_key_here
   - id: notion
     name: Notion
     description: Official Notion MCP Server that provides seamless integration with Notion APIs, enabling advanced
@@ -2248,52 +1887,6 @@ items:
         key: EMBEDDING_MODEL
         placeholder: sentence-transformers/all-MiniLM-L6-v2
         optional: true
-  - id: raygun
-    name: Raygun
-    description: Provides comprehensive access to Raygun's error tracking, crash reporting, and real user monitoring
-      features through API integration, enabling management of applications, errors, deployments, and performance
-      metrics.
-    author: MindscapeHQ
-    url: https://github.com/MindscapeHQ/mcp-server-raygun
-    tags:
-      - error-tracking
-      - crash-reporting
-      - performance-monitoring
-      - debugging
-      - application-monitoring
-    content:
-      - name: NPX
-        prerequisites:
-          - Node.js
-        content: |
-          {
-            "command": "npx",
-            "args": ["-y", "@raygun.io/mcp-server-raygun"],
-            "env": {
-              "RAYGUN_PAT_TOKEN": "{{RAYGUN_PAT_TOKEN}}"
-            }
-          }
-      - name: Node.js
-        content: |
-          {
-            "command": "node",
-            "args": ["{{RAYGUN_PATH}}/build/index.js"],
-            "env": {
-              "RAYGUN_PAT_TOKEN": "{{RAYGUN_PAT_TOKEN}}",
-              "SOURCEMAP_ALLOWED_DIRS": "{{SOURCEMAP_ALLOWED_DIRS}}"
-            }
-          }
-        parameters:
-          - name: Source Map Allowed Directories
-            key: SOURCEMAP_ALLOWED_DIRS
-            placeholder: /path/to/sourcemaps,/another/path
-          - name: Raygun MCP Path
-            key: RAYGUN_PATH
-            placeholder: /path/to/mcp-server-raygun
-    parameters:
-      - name: Raygun PAT Token
-        key: RAYGUN_PAT_TOKEN
-        placeholder: your_raygun_pat_token
   - id: redis
     name: Redis
     description: Provides access to Redis key-value stores, enabling operations like setting, getting, deleting, and listing
@@ -2394,47 +1987,6 @@ items:
       - name: Riza API Key
         key: RIZA_API_KEY
         placeholder: your_riza_api_key
-  - id: sentry
-    name: Sentry
-    description: Retrieves and analyzes error reports, stacktraces, and debugging information from Sentry.io, enabling AI
-      assistants to inspect and understand application issues.
-    author: modelcontextprotocol
-    url: https://github.com/modelcontextprotocol/servers-archived/tree/main/src/sentry
-    tags:
-      - error-tracking
-      - debugging
-      - stacktraces
-      - issue-monitoring
-      - application-monitoring
-    content:
-      - name: UVX
-        prerequisites:
-          - Python and uv
-        content: |
-          {
-            "command": "uvx",
-            "args": ["mcp-server-sentry", "--auth-token", "{{SENTRY_AUTH_TOKEN}}"]
-          }
-      - name: Docker
-        prerequisites:
-          - Docker
-        content: |
-          {
-            "command": "docker",
-            "args": ["run", "-i", "--rm", "mcp/sentry", "--auth-token", "{{SENTRY_AUTH_TOKEN}}"]
-          }
-      - name: Python/Pip
-        prerequisites:
-          - Python
-        content: |
-          {
-            "command": "python",
-            "args": ["-m", "mcp_server_sentry", "--auth-token", "{{SENTRY_AUTH_TOKEN}}"]
-          }
-    parameters:
-      - name: Sentry Auth Token
-        key: SENTRY_AUTH_TOKEN
-        placeholder: your_sentry_auth_token_here
   - id: sequentialthinking
     name: Sequential Thinking
     description: A structured problem-solving tool that enables step-by-step analysis, thought revision, and branching logic
