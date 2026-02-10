@@ -4,9 +4,9 @@ Thank you for your interest in contributing to the Kilo Marketplace! This guide 
 
 ## Before You Start
 
-- Ensure your skill is based on a **real use case**, not a hypothetical scenario.
-- Search existing skills to avoid duplicates.
-- If possible, attribute the use case to the original person or source.
+-   Ensure your skill is based on a **real use case**, not a hypothetical scenario.
+-   Search existing skills to avoid duplicates.
+-   If possible, attribute the use case to the original person or source.
 
 ## Skill Requirements
 
@@ -45,9 +45,9 @@ Detailed description of the skill and what it helps users accomplish.
 
 ## When to Use This Skill
 
-- Bullet point use case 1
-- Bullet point use case 2
-- Bullet point use case 3
+-   Bullet point use case 1
+-   Bullet point use case 2
+-   Bullet point use case 3
 
 ## What This Skill Does
 
@@ -111,20 +111,20 @@ Show what the skill produces
 
 Your PR should:
 
-- **Title**: "Add [Skill Name] skill"
-- **Description**: Explain the real-world use case and include:
-  - What problem it solves
-  - Who uses this workflow
-  - Attribution/inspiration source
-  - Example of how it's used
+-   **Title**: "Add [Skill Name] skill"
+-   **Description**: Explain the real-world use case and include:
+    -   What problem it solves
+    -   Who uses this workflow
+    -   Attribution/inspiration source
+    -   Example of how it's used
 
 ## Code of Conduct
 
-- Be respectful and constructive
-- Credit original sources and inspirations
-- Focus on practical, helpful skills
-- Write clear, accessible documentation
-- Test your skills before submitting
+-   Be respectful and constructive
+-   Credit original sources and inspirations
+-   Focus on practical, helpful skills
+-   Write clear, accessible documentation
+-   Test your skills before submitting
 
 ## Questions?
 
@@ -146,9 +146,9 @@ or
 
 Examples:
 
-- **Inspired by:** Dan Shipper's meeting analysis workflow
-- **Inspired by:** Teresa Torres's content research process
-- **Credit:** Based on Notion's documentation workflow
+-   **Inspired by:** Dan Shipper's meeting analysis workflow
+-   **Inspired by:** Teresa Torres's content research process
+-   **Credit:** Based on Notion's documentation workflow
 
 ---
 
@@ -184,44 +184,44 @@ description: Brief description of what this mode does
 author: "@your-github-username"
 tags: [relevant, tags, here]
 content: |
-  slug: mode-slug
-  name: 🎯 Mode Display Name
-  roleDefinition: |
-    You are a specialist in [domain]. Your expertise includes:
-    - Capability 1
-    - Capability 2
-    - Capability 3
-  groups:
-    - read
-    - edit
-    - command
-  customInstructions: |
-    Specific behavioral guidelines for this mode.
+    slug: mode-slug
+    name: 🎯 Mode Display Name
+    roleDefinition: |
+      You are a specialist in [domain]. Your expertise includes:
+      - Capability 1
+      - Capability 2
+      - Capability 3
+    groups:
+      - read
+      - edit
+      - command
+    customInstructions: |
+      Specific behavioral guidelines for this mode.
 ```
 
 ### Mode Properties
 
-| Property | Required | Description |
-|----------|----------|-------------|
-| `id` | Yes | Unique identifier (kebab-case) |
-| `name` | Yes | Display name shown in the marketplace |
-| `description` | Yes | Brief description of the mode's purpose |
-| `author` | Yes | Your GitHub username with @ prefix |
-| `tags` | Yes | Array of relevant tags for discovery |
-| `content.slug` | Yes | Internal identifier (must match `id`) |
-| `content.name` | Yes | Display name with optional emoji |
-| `content.roleDefinition` | Yes | Defines the mode's expertise and personality |
-| `content.groups` | Yes | Tool groups the mode can access |
-| `content.customInstructions` | No | Additional behavioral guidelines |
-| `content.whenToUse` | No | Guidance for automated mode selection |
+| Property                     | Required | Description                                  |
+| ---------------------------- | -------- | -------------------------------------------- |
+| `id`                         | Yes      | Unique identifier (kebab-case)               |
+| `name`                       | Yes      | Display name shown in the marketplace        |
+| `description`                | Yes      | Brief description of the mode's purpose      |
+| `author`                     | Yes      | Your GitHub username with @ prefix           |
+| `tags`                       | Yes      | Array of relevant tags for discovery         |
+| `content.slug`               | Yes      | Internal identifier (must match `id`)        |
+| `content.name`               | Yes      | Display name with optional emoji             |
+| `content.roleDefinition`     | Yes      | Defines the mode's expertise and personality |
+| `content.groups`             | Yes      | Tool groups the mode can access              |
+| `content.customInstructions` | No       | Additional behavioral guidelines             |
+| `content.whenToUse`          | No       | Guidance for automated mode selection        |
 
 ### Available Tool Groups
 
-- `read` - Read files and explore the codebase
-- `edit` - Modify files (can include file restrictions)
-- `command` - Execute terminal commands
-- `browser` - Browser automation capabilities
-- `mcp` - Access MCP server tools
+-   `read` - Read files and explore the codebase
+-   `edit` - Modify files (can include file restrictions)
+-   `command` - Execute terminal commands
+-   `browser` - Browser automation capabilities
+-   `mcp` - Access MCP server tools
 
 ### File Restrictions Example
 
@@ -229,16 +229,17 @@ To restrict which files a mode can edit:
 
 ```yaml
 groups:
-  - read
-  - - edit
-    - fileRegex: \.(md|mdx)$
-      description: Markdown files only
-  - command
+    - read
+    - - edit
+      - fileRegex: \.(md|mdx)$
+        description: Markdown files only
+    - command
 ```
 
 ### Mode Examples
 
 **Documentation Writer** (`modes/docs-writer/MODE.yaml`):
+
 ```yaml
 id: docs-writer
 name: Documentation Writer
@@ -246,20 +247,21 @@ description: Technical documentation expert for clear, comprehensive docs
 author: "@your-username"
 tags: [documentation, markdown, technical-writing]
 content: |
-  slug: docs-writer
-  name: 📝 Documentation Writer
-  roleDefinition: |
-    You are a technical writer specializing in clear documentation.
-  groups:
-    - read
-    - - edit
-      - fileRegex: \.md$
-        description: Markdown files only
-  customInstructions: |
-    Focus on clarity, proper formatting, and comprehensive examples.
+    slug: docs-writer
+    name: 📝 Documentation Writer
+    roleDefinition: |
+      You are a technical writer specializing in clear documentation.
+    groups:
+      - read
+      - - edit
+        - fileRegex: \.md$
+          description: Markdown files only
+    customInstructions: |
+      Focus on clarity, proper formatting, and comprehensive examples.
 ```
 
 **Security Reviewer** (`modes/security-review/MODE.yaml`):
+
 ```yaml
 id: security-review
 name: Security Reviewer
@@ -267,15 +269,15 @@ description: Read-only security analysis and vulnerability assessment
 author: "@your-username"
 tags: [security, audit, code-review]
 content: |
-  slug: security-review
-  name: 🔒 Security Reviewer
-  roleDefinition: |
-    You are a security specialist reviewing code for vulnerabilities.
-  groups:
-    - read
-    - browser
-  customInstructions: |
-    Focus on input validation, authentication flaws, and data exposure risks.
+    slug: security-review
+    name: 🔒 Security Reviewer
+    roleDefinition: |
+      You are a security specialist reviewing code for vulnerabilities.
+    groups:
+      - read
+      - browser
+    customInstructions: |
+      Focus on input validation, authentication flaws, and data exposure risks.
 ```
 
 ---
@@ -312,67 +314,69 @@ description: Brief description of what this MCP server provides
 author: author-name
 url: https://github.com/org/repo
 tags:
-  - relevant
-  - tags
-  - here
+    - relevant
+    - tags
+    - here
 prerequisites:
-  - Required software or accounts
+    - Required software or accounts
 content:
-  - name: NPX
-    prerequisites:
-      - Node.js
-    content: |
-      {
-        "command": "npx",
-        "args": ["-y", "@package/mcp-server"],
-        "env": {
-          "API_KEY": "{{API_KEY}}"
-        }
-      }
+    - name: NPX
+      prerequisites:
+          - Node.js
+      content: |
+          {
+            "command": "npx",
+            "args": ["-y", "@package/mcp-server"],
+            "env": {
+              "API_KEY": "{{API_KEY}}"
+            }
+          }
 parameters:
-  - name: API Key
-    key: API_KEY
-    placeholder: your_api_key_here
+    - name: API Key
+      key: API_KEY
+      placeholder: your_api_key_here
 ```
 
 ### MCP Properties
 
-| Property | Required | Description |
-|----------|----------|-------------|
-| `id` | Yes | Unique identifier (kebab-case) |
-| `name` | Yes | Display name for the MCP server |
-| `description` | Yes | Clear description of capabilities |
-| `author` | Yes | Author or organization name |
-| `url` | Yes | Link to the MCP server repository |
-| `tags` | Yes | Array of relevant tags |
-| `prerequisites` | No | Required software or accounts |
-| `content` | Yes | Installation configuration(s) |
-| `parameters` | No | User-configurable parameters |
+| Property        | Required | Description                       |
+| --------------- | -------- | --------------------------------- |
+| `id`            | Yes      | Unique identifier (kebab-case)    |
+| `name`          | Yes      | Display name for the MCP server   |
+| `description`   | Yes      | Clear description of capabilities |
+| `author`        | Yes      | Author or organization name       |
+| `url`           | Yes      | Link to the MCP server repository |
+| `tags`          | Yes      | Array of relevant tags            |
+| `prerequisites` | No       | Required software or accounts     |
+| `content`       | Yes      | Installation configuration(s)     |
+| `parameters`    | No       | User-configurable parameters      |
 
 ### Transport Types
 
 **STDIO Transport (Local):**
+
 ```yaml
 content: |
-  {
-    "command": "npx",
-    "args": ["-y", "@package/mcp-server"],
-    "env": {
-      "API_KEY": "{{API_KEY}}"
+    {
+      "command": "npx",
+      "args": ["-y", "@package/mcp-server"],
+      "env": {
+        "API_KEY": "{{API_KEY}}"
+      }
     }
-  }
 ```
 
 **Streamable HTTP Transport (Remote):**
+
 ```yaml
 content: |
-  {
-    "type": "streamable-http",
-    "url": "https://your-server-url.com/mcp",
-    "headers": {
-      "Authorization": "Bearer {{API_TOKEN}}"
+    {
+      "type": "streamable-http",
+      "url": "https://your-server-url.com/mcp",
+      "headers": {
+        "Authorization": "Bearer {{API_TOKEN}}"
+      }
     }
-  }
 ```
 
 ### Multiple Installation Options
@@ -381,30 +385,30 @@ Provide multiple ways to install when possible:
 
 ```yaml
 content:
-  - name: NPX
-    prerequisites:
-      - Node.js
-    content: |
-      {
-        "command": "npx",
-        "args": ["-y", "@package/mcp-server"]
-      }
-  - name: Docker
-    prerequisites:
-      - Docker
-    content: |
-      {
-        "command": "docker",
-        "args": ["run", "-i", "--rm", "mcp/server"]
-      }
-  - name: UVX
-    prerequisites:
-      - Python and uv
-    content: |
-      {
-        "command": "uvx",
-        "args": ["mcp-server-package"]
-      }
+    - name: NPX
+      prerequisites:
+          - Node.js
+      content: |
+          {
+            "command": "npx",
+            "args": ["-y", "@package/mcp-server"]
+          }
+    - name: Docker
+      prerequisites:
+          - Docker
+      content: |
+          {
+            "command": "docker",
+            "args": ["run", "-i", "--rm", "mcp/server"]
+          }
+    - name: UVX
+      prerequisites:
+          - Python and uv
+      content: |
+          {
+            "command": "uvx",
+            "args": ["mcp-server-package"]
+          }
 ```
 
 ### Parameter Configuration
@@ -413,13 +417,13 @@ Define user-configurable parameters:
 
 ```yaml
 parameters:
-  - name: API Key
-    key: API_KEY
-    placeholder: your_api_key_here
-  - name: Optional Setting
-    key: OPTIONAL_SETTING
-    placeholder: default_value
-    optional: true
+    - name: API Key
+      key: API_KEY
+      placeholder: your_api_key_here
+    - name: Optional Setting
+      key: OPTIONAL_SETTING
+      placeholder: default_value
+      optional: true
 ```
 
 ### MCP Example
@@ -433,38 +437,38 @@ description: Enables AI assistants to interact with Example Service API for data
 author: example-org
 url: https://github.com/example-org/example-mcp
 tags:
-  - api-integration
-  - automation
-  - data-retrieval
+    - api-integration
+    - automation
+    - data-retrieval
 prerequisites:
-  - Example Service account
+    - Example Service account
 content:
-  - name: NPX
-    prerequisites:
-      - Node.js
-    content: |
-      {
-        "command": "npx",
-        "args": ["-y", "@example/mcp-server"],
-        "env": {
-          "EXAMPLE_API_KEY": "{{EXAMPLE_API_KEY}}"
-        }
-      }
-  - name: Docker
-    prerequisites:
-      - Docker
-    content: |
-      {
-        "command": "docker",
-        "args": ["run", "-i", "--rm", "-e", "EXAMPLE_API_KEY", "example/mcp-server"],
-        "env": {
-          "EXAMPLE_API_KEY": "{{EXAMPLE_API_KEY}}"
-        }
-      }
+    - name: NPX
+      prerequisites:
+          - Node.js
+      content: |
+          {
+            "command": "npx",
+            "args": ["-y", "@example/mcp-server"],
+            "env": {
+              "EXAMPLE_API_KEY": "{{EXAMPLE_API_KEY}}"
+            }
+          }
+    - name: Docker
+      prerequisites:
+          - Docker
+      content: |
+          {
+            "command": "docker",
+            "args": ["run", "-i", "--rm", "-e", "EXAMPLE_API_KEY", "example/mcp-server"],
+            "env": {
+              "EXAMPLE_API_KEY": "{{EXAMPLE_API_KEY}}"
+            }
+          }
 parameters:
-  - name: Example API Key
-    key: EXAMPLE_API_KEY
-    placeholder: your_example_api_key
+    - name: Example API Key
+      key: EXAMPLE_API_KEY
+      placeholder: your_example_api_key
 ```
 
 ---
