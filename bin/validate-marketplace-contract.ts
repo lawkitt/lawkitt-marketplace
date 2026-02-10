@@ -54,7 +54,7 @@ console.log("Validating marketplace catalogs...");
 const results = [
   validateCatalog("modes", ["id", "name", "description", "content"]),
   validateCatalog("mcps", ["id", "name", "description", "url", "content"]),
-  validateCatalog("skills", ["id", "description", "category", "githubUrl", "content"])
+  validateCatalog("skills", ["id", "description", "githubUrl", "content"])
 ];
 
 let hasErrors = false;
