@@ -8,3 +8,6 @@ pnpm-lock.yaml
 *.min.js
 *.min.css
 bin/
+mcps/
+modes/
+skills/
