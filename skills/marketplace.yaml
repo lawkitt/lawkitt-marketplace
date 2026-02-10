@@ -26,51 +26,6 @@ items:
     githubUrl: https://github.com/lawkitt/lawkitt-marketplace/tree/main/skills/meeting-insights-analyzer
     rawUrl: https://raw.githubusercontent.com/lawkitt/lawkitt-marketplace/main/skills/meeting-insights-analyzer/SKILL.md
     content: https://github.com/lawkitt/lawkitt-marketplace/releases/download/skills-latest/meeting-insights-analyzer.tar.gz
-  - id: artifacts-builder
-    description: >-
-      Suite of tools for creating elaborate, multi-component HTML artifacts using modern frontend web technologies
-      (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui
-      components - not for simple single-file HTML/JSX artifacts.
-    category: development
-    githubUrl: https://github.com/lawkitt/lawkitt-marketplace/tree/main/skills/artifacts-builder
-    rawUrl: https://raw.githubusercontent.com/lawkitt/lawkitt-marketplace/main/skills/artifacts-builder/SKILL.md
-    content: https://github.com/lawkitt/lawkitt-marketplace/releases/download/skills-latest/artifacts-builder.tar.gz
-  - id: changelog-generator
-    description: >-
-      Automatically creates user-facing changelogs from git commits by analyzing commit history, categorizing changes,
-      and transforming technical commits into clear, customer-friendly release notes. Turns hours of manual changelog
-      writing into minutes of automated generation.
-    category: development
-    githubUrl: https://github.com/lawkitt/lawkitt-marketplace/tree/main/skills/changelog-generator
-    rawUrl: https://raw.githubusercontent.com/lawkitt/lawkitt-marketplace/main/skills/changelog-generator/SKILL.md
-    content: https://github.com/lawkitt/lawkitt-marketplace/releases/download/skills-latest/changelog-generator.tar.gz
-  - id: create-pull-request
-    description: >-
-      Create a GitHub pull request following project conventions. Use when the user asks to create a PR, submit changes
-      for review, or open a pull request. Handles commit analysis, branch management, and PR creation using the gh CLI
-      tool.
-    category: development
-    githubUrl: https://github.com/lawkitt/lawkitt-marketplace/tree/main/skills/create-pull-request
-    rawUrl: https://raw.githubusercontent.com/lawkitt/lawkitt-marketplace/main/skills/create-pull-request/SKILL.md
-    content: https://github.com/lawkitt/lawkitt-marketplace/releases/download/skills-latest/create-pull-request.tar.gz
-  - id: langsmith-fetch
-    description: >-
-      Debug LangChain and LangGraph agents by fetching execution traces from LangSmith Studio. Use when debugging agent
-      behavior, investigating errors, analyzing tool calls, checking memory operations, or examining agent performance.
-      Automatically fetches recent traces and analyzes execution patterns. Requires langsmith-fetch CLI installed.
-    category: development
-    githubUrl: https://github.com/lawkitt/lawkitt-marketplace/tree/main/skills/langsmith-fetch
-    rawUrl: https://raw.githubusercontent.com/lawkitt/lawkitt-marketplace/main/skills/langsmith-fetch/SKILL.md
-    content: https://github.com/lawkitt/lawkitt-marketplace/releases/download/skills-latest/langsmith-fetch.tar.gz
-  - id: mcp-builder
-    description: >-
-      Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external
-      services through well-designed tools. Use when building MCP servers to integrate external APIs or services,
-      whether in Python (FastMCP) or Node/TypeScript (MCP SDK).
-    category: development
-    githubUrl: https://github.com/lawkitt/lawkitt-marketplace/tree/main/skills/mcp-builder
-    rawUrl: https://raw.githubusercontent.com/lawkitt/lawkitt-marketplace/main/skills/mcp-builder/SKILL.md
-    content: https://github.com/lawkitt/lawkitt-marketplace/releases/download/skills-latest/mcp-builder.tar.gz
   - id: skill-creator
     description: >-
       Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an
