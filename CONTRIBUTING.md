@@ -154,7 +154,7 @@ Examples:
 
 ## Contributing Custom Modes
 
-Custom modes allow you to tailor Kilo Code's behavior for specific tasks or workflows. You can contribute modes that benefit the community.
+Custom modes allow you to tailor Lawkitt's behavior for specific tasks or workflows. You can contribute modes that benefit the community.
 
 ### Mode Requirements
 
@@ -163,7 +163,7 @@ All contributed modes must:
 1. **Serve a clear purpose** - Optimized for specific tasks like documentation, testing, or security review
 2. **Be well-documented** - Include clear descriptions and use cases
 3. **Define appropriate permissions** - Use tool groups and file restrictions responsibly
-4. **Be tested** - Verify the mode works correctly in Kilo Code
+4. **Be tested** - Verify the mode works correctly in Lawkitt
 
 ### Mode Structure
 
@@ -284,7 +284,7 @@ content: |
 
 ## Contributing MCP Servers
 
-MCP (Model Context Protocol) servers extend Kilo Code's capabilities by connecting to external tools and services.
+MCP (Model Context Protocol) servers extend Lawkitt's capabilities by connecting to external tools and services.
 
 ### MCP Requirements
 
@@ -477,4 +477,4 @@ parameters:
 
 Open an issue if you have questions about contributing or need help structuring your skill, mode, or MCP server.
 
-Thank you for contributing to Kilo Marketplace!
+Thank you for contributing to Lawkitt Marketplace!

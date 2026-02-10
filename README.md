@@ -143,7 +143,7 @@ A mode defines:
 -   A "Security Reviewer" mode with read-only access for auditing
 -   A "Test Engineer" mode focused on test files
 
-Modes can be shared as YAML configurations and imported into Kilo Code or other compatible tools.
+Modes can be shared as YAML configurations and imported into Lawkitt or other compatible tools.
 
 Browse available modes in the [`modes/`](./modes/) directory.
 

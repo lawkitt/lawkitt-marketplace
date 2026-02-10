@@ -284,7 +284,7 @@ today."
 **From Granola** (free with Lenny's newsletter subscription):
 - Granola auto-transcribes your meetings
 - Export transcripts to a folder: [Instructions on how]
-- Point Kilo Code to that folder
+- Point Lawkitt to that folder
 
 **From Zoom**:
 - Enable cloud recording with transcription
@@ -294,7 +294,7 @@ today."
 **From Google Meet**:
 - Use Google Docs auto-transcription
 - Save transcript docs to a folder
-- Download as .txt files or give Kilo Code access
+- Download as .txt files or give Lawkitt access
 
 **From Fireflies.ai, Otter.ai, etc.**:
 - Export transcripts in bulk
