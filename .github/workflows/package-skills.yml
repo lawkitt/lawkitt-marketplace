@@ -52,7 +52,7 @@ jobs:
           draft: false
           prerelease: false
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MARKETPLACE_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Update latest release tag
         run: |
@@ -62,7 +62,7 @@ jobs:
             --title "Latest Skills" \
             --notes "Latest packaged skills. Updated automatically."
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MARKETPLACE_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Verify artifact URLs
         run: |
