@@ -1,0 +1,87 @@
+name: Validate Marketplace
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+          cache-dependency-path: bin/pnpm-lock.yaml
+
+      - name: Install dependencies
+        run: pnpm install
+        working-directory: bin
+
+      - name: Check for Catalog Drift
+        run: |
+          pnpm exec tsx generate-skill-marketplace.ts
+          pnpm exec tsx generate-modes-marketplace.ts
+          pnpm exec tsx generate-mcps-marketplace.ts
+          
+          if ! git diff --quiet ../skills/marketplace.yaml ../modes/marketplace.yaml ../mcps/marketplace.yaml; then
+            echo "Error: Marketplace catalogs are out of sync with source files."
+            echo "Please run the generation scripts locally and commit the changes."
+            git diff ../skills/marketplace.yaml ../modes/marketplace.yaml ../mcps/marketplace.yaml
+            exit 1
+          fi
+        working-directory: bin
+
+      - name: Validate Catalog Contracts
+        run: pnpm exec tsx validate-marketplace-contract.ts
+        working-directory: bin
+
+      - name: Validate Skill URLs
+        run: pnpm exec tsx validate-skill-urls.ts
+        working-directory: bin
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-skills-ref
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install skills-ref
+        run: pip install git+https://github.com/agentskills/agentskills.git#subdirectory=skills-ref
+
+      - name: Validate SKILL.md structure
+        run: |
+          failed=0
+          for skill_dir in skills/*/; do
+            # Skip hidden directories
+            if [[ "$(basename "$skill_dir")" == .* ]]; then
+              continue
+            fi
+            echo "Validating: $skill_dir"
+            if ! skills-ref validate "$skill_dir"; then
+              failed=1
+            fi
+          done
+          exit $failed

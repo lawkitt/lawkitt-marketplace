@@ -1,0 +1,13 @@
+node_modules
+dist
+build
+out
+.venv
+tmp
+pnpm-lock.yaml
+*.min.js
+*.min.css
+bin/
+mcps/
+modes/
+skills/

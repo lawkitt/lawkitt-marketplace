@@ -32,11 +32,11 @@ name: skill-name
 description: A clear description of what the skill does and when it should be used. Use third-person (e.g., "This skill should be used when...").
 license: MIT #
 metadata:
-  category: development # or business-marketing, etc.
-  author: author-name # Optional - who created the skill
-  source: # Optional - for skills from external sources
-    repository: https://github.com/org/repo
-    path: path/to/skill/in/repo
+    category: development # or business-marketing, etc.
+    author: author-name # Optional - who created the skill
+    source: # Optional - for skills from external sources
+        repository: https://github.com/org/repo
+        path: path/to/skill/in/repo
 ---
 ```
 
@@ -64,4 +64,4 @@ If you need more information, checkout https://agentskills.io/llms.txt
 ## Adding a remote skill
 
 when asked to add a skill from a github url
-use the instructions in .kilocode/skills/add-remote-skill/SKILL.md
+use the instructions in .agents/skills/add-remote-skill/SKILL.md
