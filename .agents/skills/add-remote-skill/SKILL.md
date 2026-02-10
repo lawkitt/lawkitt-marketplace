@@ -1,11 +1,11 @@
 ---
 name: add-remote-skill
-description: This skill should be used when the user wants to add one or more skills from GitHub repositories to the kilo-marketplace. It handles parsing GitHub URLs, cloning skill directories, and updating SKILL.md frontmatter with source metadata.
+description: This skill should be used when the user wants to add one or more skills from GitHub repositories to the lawkitt-marketplace. It handles parsing GitHub URLs, cloning skill directories, and updating SKILL.md frontmatter with source metadata.
 ---
 
 # Add Remote Skill
 
-This skill enables adding skills from GitHub repositories to the kilo-marketplace.
+This skill enables adding skills from GitHub repositories to the lawkitt-marketplace.
 
 ## When to Use
 
