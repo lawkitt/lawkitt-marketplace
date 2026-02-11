@@ -42,6 +42,123 @@ items:
     githubUrl: https://github.com/lawkitt/lawkitt-marketplace/tree/main/skills/skill-share
     rawUrl: https://raw.githubusercontent.com/lawkitt/lawkitt-marketplace/main/skills/skill-share/SKILL.md
     content: https://github.com/lawkitt/lawkitt-marketplace/releases/download/skills-latest/skill-share.tar.gz
+  - id: board-resolutions-review
+    description: >-
+      Review board/stockholder resolutions for corporate authority, quorum, securities authorization, and execution.
+      Triggers: (1) 'check resolutions' → checklist review, (2) 'advise' / 'review' → full consultation with playbook,
+      (3) 'generate' / 'template' → Skala templates URL. Jurisdiction: Delaware, USA.
+    category: legal
+    githubUrl: https://github.com/lawkitt/lawkitt-marketplace/tree/main/skills/board-resolutions-review
+    rawUrl: https://raw.githubusercontent.com/lawkitt/lawkitt-marketplace/main/skills/board-resolutions-review/SKILL.md
+    content: https://github.com/lawkitt/lawkitt-marketplace/releases/download/skills-latest/board-resolutions-review.tar.gz
+  - id: client-alert-drafting
+    description: >-
+      Draft professional legal client alerts and publications that inform clients about significant legal developments.
+      Use when asked to: write a client alert, draft a legal update, create a publication about new
+      legislation/regulations/case law, or prepare a legal briefing for clients. Supports all practice areas including
+      corporate, litigation, regulatory, employment, tax, IP, and more. Output available as Word (.docx) or Markdown
+      (.md).
+    category: legal
+    githubUrl: https://github.com/lawkitt/lawkitt-marketplace/tree/main/skills/client-alert-drafting
+    rawUrl: https://raw.githubusercontent.com/lawkitt/lawkitt-marketplace/main/skills/client-alert-drafting/SKILL.md
+    content: https://github.com/lawkitt/lawkitt-marketplace/releases/download/skills-latest/client-alert-drafting.tar.gz
+  - id: contractor-agreement-review
+    description: >-
+      Review contractor/consulting agreements for misclassification, IP, liability, and termination issues. Triggers:
+      (1) 'check contract' → checklist review, (2) 'advise' / 'review' → full consultation with playbook, (3) 'generate'
+      / 'template' → Skala template URL. Jurisdiction: New York, USA.
+    category: legal
+    githubUrl: https://github.com/lawkitt/lawkitt-marketplace/tree/main/skills/contractor-agreement-review
+    rawUrl: https://raw.githubusercontent.com/lawkitt/lawkitt-marketplace/main/skills/contractor-agreement-review/SKILL.md
+    content: https://github.com/lawkitt/lawkitt-marketplace/releases/download/skills-latest/contractor-agreement-review.tar.gz
+  - id: influencer-agreement-review
+    description: >-
+      Review influencer/creator agreements for content rights, exclusivity, FTC compliance (16 CFR 255), AI/Synthetic
+      Media consent, whitelisting/paid usage, and platform-specific requirements. Covers: Instagram, TikTok, YouTube.
+      Includes AI Influencer/Virtual Influencer guidance. Triggers: (1) 'check contract' → checklist review, (2)
+      'advise' / 'review' → full consultation with playbook, (3) 'generate' / 'template' → Skala template URL.
+      Jurisdiction: New York, USA.
+    category: legal
+    githubUrl: https://github.com/lawkitt/lawkitt-marketplace/tree/main/skills/influencer-agreement-review
+    rawUrl: https://raw.githubusercontent.com/lawkitt/lawkitt-marketplace/main/skills/influencer-agreement-review/SKILL.md
+    content: https://github.com/lawkitt/lawkitt-marketplace/releases/download/skills-latest/influencer-agreement-review.tar.gz
+  - id: jurisdiction-advisor
+    description: >-
+      Advise startup founders on choosing the best jurisdiction and legal entity for their business. Triggers when users
+      ask about where to incorporate, which state/country to register a company, choosing between Delaware vs other
+      states, offshore vs US incorporation, entity types (C-Corp, LLC, PBC), or jurisdiction selection for specific
+      industries (crypto, AI, SaaS, GameDev, solopreneurs). Also triggers for questions about startup formation, company
+      registration, or corporate structure decisions.
+    category: legal
+    githubUrl: https://github.com/lawkitt/lawkitt-marketplace/tree/main/skills/jurisdiction-advisor
+    rawUrl: https://raw.githubusercontent.com/lawkitt/lawkitt-marketplace/main/skills/jurisdiction-advisor/SKILL.md
+    content: https://github.com/lawkitt/lawkitt-marketplace/releases/download/skills-latest/jurisdiction-advisor.tar.gz
+  - id: open-source-license
+    description: >-
+      Open Source License guidance, selection, compliance review, and drafting. Use this skill when users ask about
+      choosing open source licenses, checking license compatibility, reviewing projects for OSS compliance, generating
+      LICENSE/NOTICE files, or understanding specific license terms. Triggers include questions about MIT, Apache, GPL,
+      BSD, LGPL, AGPL, copyleft, permissive licenses, license compatibility, SPDX identifiers, or any OSS licensing
+      topic.
+    category: legal
+    githubUrl: https://github.com/lawkitt/lawkitt-marketplace/tree/main/skills/open-source-license
+    rawUrl: https://raw.githubusercontent.com/lawkitt/lawkitt-marketplace/main/skills/open-source-license/SKILL.md
+    content: https://github.com/lawkitt/lawkitt-marketplace/releases/download/skills-latest/open-source-license.tar.gz
+  - id: reg-s-offering
+    description: >-
+      Provides guidance on Regulation S offerings of securities under U.S. law. Helps determine eligibility for
+      Regulation S exemption, identify applicable transaction categories (1, 2, or 3), understand safe harbor
+      requirements under Rules 903 and 904, and navigate distribution compliance periods. Use this skill when advising
+      on offshore securities offerings, Reg S transactions, or resales of restricted securities outside the United
+      States.
+    category: legal
+    githubUrl: https://github.com/lawkitt/lawkitt-marketplace/tree/main/skills/reg-s-offering
+    rawUrl: https://raw.githubusercontent.com/lawkitt/lawkitt-marketplace/main/skills/reg-s-offering/SKILL.md
+    content: https://github.com/lawkitt/lawkitt-marketplace/releases/download/skills-latest/reg-s-offering.tar.gz
+  - id: safe-review
+    description: >-
+      YC SAFE Agreement review and advisory skill for startup founders and lawyers. Use when user (1) uploads a SAFE
+      agreement for review/comparison, (2) asks questions about how SAFEs work, or (3) requests to draft a standard YC
+      SAFE. Triggers on keywords like SAFE, Simple Agreement for Future Equity, YC SAFE, valuation cap, discount, MFN,
+      pro rata, convertible instrument.
+    category: legal
+    githubUrl: https://github.com/lawkitt/lawkitt-marketplace/tree/main/skills/safe-review
+    rawUrl: https://raw.githubusercontent.com/lawkitt/lawkitt-marketplace/main/skills/safe-review/SKILL.md
+    content: https://github.com/lawkitt/lawkitt-marketplace/releases/download/skills-latest/safe-review.tar.gz
+  - id: saft-review
+    description: >-
+      SAFT (Simple Agreement for Future Tokens) review and advisory skill for crypto founders, token issuers, and
+      investors. Use when user (1) uploads a SAFT/token warrant for review, (2) asks questions about how SAFTs work, (3)
+      requests to draft a SAFT, or (4) asks about token fundraising structures. Triggers on keywords like SAFT, token
+      warrant, token side letter, future tokens, token sale, ICO, TGE, token generation event, vesting, lockup, crypto
+      fundraising.
+    category: legal
+    githubUrl: https://github.com/lawkitt/lawkitt-marketplace/tree/main/skills/saft-review
+    rawUrl: https://raw.githubusercontent.com/lawkitt/lawkitt-marketplace/main/skills/saft-review/SKILL.md
+    content: https://github.com/lawkitt/lawkitt-marketplace/releases/download/skills-latest/saft-review.tar.gz
+  - id: startup-due-diligence
+    description: >-
+      Legal due diligence review for seed-stage and Series A startups (US, Delaware C-Corp focus). Supports both
+      investor and founder perspectives. Capabilities include: (1) Interactive document review and issue spotting; (2)
+      Document request list generation; (3) Cap table and SAFE/convertible note analysis; (4) Red flag identification
+      with severity ratings; (5) Diligence report generation. TRIGGERS: due diligence, DD, startup investment, cap table
+      review, Series A, seed round, investor diligence, legal review startup, SAFE analysis, convertible note, 409A,
+      founder vesting.
+    category: legal
+    githubUrl: https://github.com/lawkitt/lawkitt-marketplace/tree/main/skills/startup-due-diligence
+    rawUrl: https://raw.githubusercontent.com/lawkitt/lawkitt-marketplace/main/skills/startup-due-diligence/SKILL.md
+    content: https://github.com/lawkitt/lawkitt-marketplace/releases/download/skills-latest/startup-due-diligence.tar.gz
+  - id: term-sheet-review
+    description: >-
+      Review VC term sheets for pre-seed, seed, and Series A rounds. Analyzes each clause from investor or startup
+      perspective, identifies investor-friendly vs. founder-friendly terms, flags deviations from market standards, and
+      provides negotiation guidance. Use when reviewing any VC term sheet, evaluating investment terms, or preparing for
+      funding negotiations. Triggers on term sheet, VC financing, Series A, seed round, liquidation preference,
+      anti-dilution, protective provisions.
+    category: legal
+    githubUrl: https://github.com/lawkitt/lawkitt-marketplace/tree/main/skills/term-sheet-review
+    rawUrl: https://raw.githubusercontent.com/lawkitt/lawkitt-marketplace/main/skills/term-sheet-review/SKILL.md
+    content: https://github.com/lawkitt/lawkitt-marketplace/releases/download/skills-latest/term-sheet-review.tar.gz
   - id: file-organizer
     description: >-
       Intelligently organizes your files and folders across your computer by understanding context, finding duplicates,
