@@ -8,9 +8,9 @@ description: >-
   include questions about MIT, Apache, GPL, BSD, LGPL, AGPL, copyleft,
   permissive licenses, license compatibility, SPDX identifiers, or any OSS
   licensing topic.
+license: Apache-2.0
 metadata:
   author: Skala Inc.
-  license: Apache-2.0
   license-notice: See LICENSE and NOTICE files in the repository
   homepage: 'https://skala.io/legal-skills'
   repository: 'https://github.com/skala-io/legal-skills'

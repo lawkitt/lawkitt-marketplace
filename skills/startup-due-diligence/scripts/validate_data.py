@@ -17,6 +17,7 @@ import sys
 import re
 from pathlib import Path
 from datetime import datetime
+from typing import Optional
 
 # Required fields for each template type
 TEMPLATE_SCHEMAS = {
@@ -87,6 +88,7 @@ TEMPLATE_SCHEMAS = {
         "optional": [
             "FOUNDERS_EQUITY",
             "OPTION_POOL_SIZE",
+            "OPTION_POOL_AVAILABLE",
             "SAFE_NOTES_TOTAL",
             "CONVERTIBLE_NOTES_TOTAL",
             "FULLY_DILUTED_SHARES",
@@ -102,11 +104,11 @@ FIELD_VALIDATORS = {
     "DATE": lambda v: bool(re.match(r'^\d{4}-\d{2}-\d{2}$', str(v))),
     "EMAIL": lambda v: bool(re.match(r'^[^@]+@[^@]+\.[^@]+$', str(v))),
     "PERCENTAGE": lambda v: isinstance(v, (int, float)) and 0 <= v <= 100,
-    "CURRENCY": lambda v: isinstance(v, (int, float)) and v >= 0,
+    "CURRENCY": lambda v: isinstance(v, (int, float)) or (isinstance(v, str) and bool(re.match(r'^\$?\d{1,3}(,\d{3})*(\.\d{2})?$', v))),
 }
 
 
-def get_field_type(field_name: str) -> str | None:
+def get_field_type(field_name: str) -> Optional[str]:
     """Infer field type from naming convention."""
     if field_name.endswith("_DATE") or field_name == "REPORT_DATE" or field_name == "REQUEST_DATE":
         return "DATE"

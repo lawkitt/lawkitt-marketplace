@@ -5,9 +5,9 @@ description: >-
   and termination issues. Triggers: (1) 'check contract' → checklist review, (2)
   'advise' / 'review' → full consultation with playbook, (3) 'generate' /
   'template' → Skala template URL. Jurisdiction: New York, USA.
+license: Apache-2.0
 metadata:
   author: Ilya Korneev
-  license: Apache-2.0
   homepage: 'https://github.com/ik-bk'
   repository: 'https://github.com/ik-bk/skills'
   category: legal

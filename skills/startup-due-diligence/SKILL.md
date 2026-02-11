@@ -9,9 +9,9 @@ description: >-
   generation. TRIGGERS: due diligence, DD, startup investment, cap table review,
   Series A, seed round, investor diligence, legal review startup, SAFE analysis,
   convertible note, 409A, founder vesting.
+license: Apache-2.0
 metadata:
   author: Skala Inc.
-  license: Apache-2.0
   license-notice: See LICENSE and NOTICE files in the repository
   homepage: 'https://skala.io/legal-skills'
   repository: 'https://github.com/skala-io/legal-skills'

@@ -8,9 +8,9 @@ description: >-
   investment terms, or preparing for funding negotiations. Triggers on term
   sheet, VC financing, Series A, seed round, liquidation preference,
   anti-dilution, protective provisions.
+license: Apache-2.0
 metadata:
   author: Skala Inc.
-  license: Apache-2.0
   license-notice: See LICENSE and NOTICE files in the repository
   homepage: 'https://skala.io/legal-skills'
   repository: 'https://github.com/skala-io/legal-skills'

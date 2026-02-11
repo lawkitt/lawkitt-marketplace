@@ -6,9 +6,9 @@ description: >-
   checklist review, (2) 'advise' / 'review' → full consultation with playbook,
   (3) 'generate' / 'template' → Skala templates URL. Jurisdiction: Delaware,
   USA.
+license: Apache-2.0
 metadata:
   author: Skala Inc.
-  license: Apache-2.0
   license-notice: See LICENSE and NOTICE files in the repository
   homepage: 'https://skala.io/legal-skills'
   repository: 'https://github.com/skala-io/legal-skills'
